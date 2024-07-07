@@ -1,19 +1,37 @@
 #include "algebra.h"
 #include <stdio.h>
-#include <math.h>
+#include <math.h> 
 
 Matrix create_matrix(int row, int col)
 {
     Matrix m;
     m.rows = row;
     m.cols = col;
+    int i,j;
+    double value;
+    for ( i = 0; i <m.rows; i++)
+    {
+        for (size_t j = 0; j <m.cols; j++)
+        {
+            m.data[i][j]=scanf("%f",&value);
+        }
+        
+    }
+    
     return m;
 }
 
 Matrix add_matrix(Matrix a, Matrix b)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    Matrix c;
+    if(a.rows==b.rows&&a.cols==b.cols){
+
+        return create_matrix(0, 0);
+    }
+    else{
+        printf("Error: Matrix a and b must have the same rows and cols.");
+        return create_matrix(0, 0);
+    }    
 }
 
 Matrix sub_matrix(Matrix a, Matrix b)
